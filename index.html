@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jasmine Batten, Ph.D. | Computing Education Researcher</title>
+  <title>Jasmine Batten, Ph. D. | Computing Education Researcher</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -146,32 +146,32 @@
     /* ─── HEADSHOT + QUILT FRAME ─── */
     .hero-photo-wrap {
       position: relative;
-      width: 260px;
-      height: 300px;
+      width: 254px;   /* photo 220px + offset 14px + corner bleed 20px */
+      height: 254px;
       flex-shrink: 0;
     }
 
-    /* Teal offset block — sits behind and slightly down-right */
+    /* Teal offset block — square, sits behind and slightly down-right */
     .hero-photo-wrap::before {
       content: '';
       position: absolute;
       top: 14px;
       left: 14px;
       width: 220px;
-      height: 270px;
+      height: 220px;
       background: var(--teal);
       border-radius: 4px;
       z-index: 0;
     }
 
-    /* The photo itself */
+    /* The photo itself — square crop */
     .hero-photo {
       position: absolute;
       top: 0;
       left: 0;
       z-index: 2;
       width: 220px;
-      height: 270px;
+      height: 220px;
       object-fit: cover;
       object-position: center top;
       border-radius: 4px;
@@ -179,7 +179,7 @@
       box-shadow: 0 6px 24px rgba(0,0,0,0.15);
     }
 
-    /* Corner patches — little quilt squares at each corner of the photo */
+    /* Corner patches */
     .corner {
       position: absolute;
       width: 18px;
@@ -189,8 +189,8 @@
     }
     .corner-tl { top: -6px;  left: -6px;  background: var(--orange); }
     .corner-tr { top: -6px;  left: 208px; background: var(--coral);  }
-    .corner-bl { top: 258px; left: -6px;  background: var(--coral);  }
-    .corner-br { top: 258px; left: 208px; background: var(--orange); }
+    .corner-bl { top: 208px; left: -6px;  background: var(--coral);  }
+    .corner-br { top: 208px; left: 208px; background: var(--orange); }
 
     /* ─── DIVIDER ─── */
     .section-divider {
@@ -460,14 +460,44 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; }
-      .hero-photo-wrap { display: none; }
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 2.5rem 1.5rem 2rem;
+        gap: 2rem;
+      }
+      .hero-text { text-align: center; order: 2; }
+      .hero-subtitle { text-align: center; }
+      .hero-tagline { margin: 0 auto 1.5rem; }
+      .hero-contact { justify-content: center; }
+
+      /* Photo shrinks but stays visible, centered above text */
+      .hero-photo-wrap {
+        order: 1;
+        width: 194px;
+        height: 194px;
+      }
+      .hero-photo-wrap::before {
+        top: 11px;
+        left: 11px;
+        width: 170px;
+        height: 170px;
+      }
+      .hero-photo {
+        width: 170px;
+        height: 170px;
+      }
+      .corner-tr { left: 158px; }
+      .corner-bl { top: 158px; }
+      .corner-br { top: 158px; left: 158px; }
+
       .main-layout { grid-template-columns: 1fr; padding: 0 1.2rem 3rem; }
       .sidebar { position: static; border-right: none; border-bottom: 2px dashed rgba(42,127,127,0.25); padding: 1.5rem 0; }
       .content { padding: 2rem 0 0; }
       .threads-grid { grid-template-columns: 1fr; }
       nav { padding: 0 1.2rem; }
-      .nav-links { gap: 1rem; }
+      .nav-links { gap: 0.7rem; }
+      .nav-links a { font-size: 0.68rem; }
     }
   </style>
 </head>
@@ -475,7 +505,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-name" href="#">Jasmine Batten, Ph.D.</a>
+  <a class="nav-name" href="#">Jasmine Batten, Ph. D.</a>
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -490,7 +520,7 @@
 <header class="hero">
   <div class="hero-text">
     <p class="hero-subtitle">// Computing Education Researcher</p>
-    <h1>Jasmine <span class="coral">Batten</span>,<br><span class="teal">Ph.D.</span></h1>
+    <h1>Jasmine <span class="coral">Batten</span>, <span class="teal" style="white-space:nowrap;">Ph. D.</span></h1>
     <p class="hero-tagline">
       Investigating how educational contexts shape student pathways in computing — with a focus on AI integration, broadening participation, and evidence-based practice.
     </p>
@@ -530,7 +560,7 @@
 
     <div class="sidebar-section">
       <div class="sidebar-label">Education</div>
-      <p style="font-size:0.82rem; font-weight:700; color:var(--navy);">Ph.D., Computer Science</p>
+      <p style="font-size:0.82rem; font-weight:700; color:var(--navy);">Ph. D., Computer Science</p>
       <p style="font-size:0.78rem; color:var(--teal); font-style:italic;">Florida International University</p>
       <p style="font-size:0.72rem; color:var(--muted); font-family:'DM Mono',monospace;">July 2024</p>
       <p style="font-size:0.75rem; color:var(--muted); margin-top:0.3rem;">Specialized in CS Education<br>NSF Graduate Research Fellow</p>
@@ -924,7 +954,7 @@
 </div>
 
 <footer>
-  <p>Jasmine Batten, Ph.D. &nbsp;·&nbsp; Computing Education Researcher &nbsp;·&nbsp; <span>Coral Gables, FL</span></p>
+  <p>Jasmine Batten, Ph. D. &nbsp;·&nbsp; Computing Education Researcher &nbsp;·&nbsp; <span>Coral Gables, FL</span></p>
   <p style="margin-top:0.4rem; opacity:0.5;">Last updated 2025</p>
 </footer>
 
