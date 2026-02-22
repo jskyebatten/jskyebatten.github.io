@@ -87,10 +87,10 @@
     .hero {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
       padding: 5rem 4rem 4rem;
       max-width: 1100px;
       margin: 0 auto;
@@ -143,32 +143,54 @@
     }
     .contact-chip:hover { background: var(--teal); }
 
-    /* ─── QUILT GRID (hero accent) ─── */
-    .quilt-accent {
-      display: grid;
-      grid-template-columns: repeat(3, 52px);
-      grid-template-rows: repeat(3, 52px);
-      gap: 5px;
-      opacity: 0.85;
+    /* ─── HEADSHOT + QUILT FRAME ─── */
+    .hero-photo-wrap {
+      position: relative;
+      width: 260px;
+      height: 300px;
+      flex-shrink: 0;
     }
 
-    .quilt-accent div {
-      border-radius: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
+    /* Teal offset block — sits behind and slightly down-right */
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 220px;
+      height: 270px;
+      background: var(--teal);
+      border-radius: 4px;
+      z-index: 0;
     }
 
-    .q1  { background: var(--teal);   }
-    .q2  { background: var(--orange); }
-    .q3  { background: var(--cream); border: 2px solid var(--orange); }
-    .q4  { background: var(--cream); border: 2px solid var(--teal);   }
-    .q5  { background: var(--coral);  }
-    .q6  { background: var(--teal);   }
-    .q7  { background: var(--orange); }
-    .q8  { background: var(--cream); border: 2px solid var(--coral);  }
-    .q9  { background: var(--navy);   }
+    /* The photo itself */
+    .hero-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 220px;
+      height: 270px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
+
+    /* Corner patches — little quilt squares at each corner of the photo */
+    .corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 2px;
+      z-index: 3;
+    }
+    .corner-tl { top: -6px;  left: -6px;  background: var(--orange); }
+    .corner-tr { top: -6px;  left: 208px; background: var(--coral);  }
+    .corner-bl { top: 258px; left: -6px;  background: var(--coral);  }
+    .corner-br { top: 258px; left: 208px; background: var(--orange); }
 
     /* ─── DIVIDER ─── */
     .section-divider {
@@ -439,7 +461,7 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; }
-      .quilt-accent { display: none; }
+      .hero-photo-wrap { display: none; }
       .main-layout { grid-template-columns: 1fr; padding: 0 1.2rem 3rem; }
       .sidebar { position: static; border-right: none; border-bottom: 2px dashed rgba(42,127,127,0.25); padding: 1.5rem 0; }
       .content { padding: 2rem 0 0; }
@@ -473,15 +495,15 @@
       Investigating how educational contexts shape student pathways in computing — with a focus on AI integration, broadening participation, and evidence-based practice.
     </p>
     <div class="hero-contact">
-      <a class="contact-chip" href="mailto:jskyebatten@gmail.com">jskyebatten@gmail.com</a>
       <a class="contact-chip" href="#">Coral Gables, FL</a>
-      <a class="contact-chip" href="https://cra.org/cerp" target="_blank">CRA-CERP</a>
     </div>
   </div>
-  <div class="quilt-accent" aria-hidden="true">
-    <div class="q1"></div><div class="q2"></div><div class="q3"></div>
-    <div class="q4"></div><div class="q5"></div><div class="q6"></div>
-    <div class="q7"></div><div class="q8"></div><div class="q9"></div>
+  <div class="hero-photo-wrap">
+    <span class="corner corner-tl" aria-hidden="true"></span>
+    <span class="corner corner-tr" aria-hidden="true"></span>
+    <span class="corner corner-bl" aria-hidden="true"></span>
+    <span class="corner corner-br" aria-hidden="true"></span>
+    <img src="headshot.jpg" alt="Jasmine Batten" class="hero-photo" />
   </div>
 </header>
 
@@ -570,7 +592,7 @@
 
       <div class="entry">
         <div class="entry-title">Research Associate — Taulbee Survey Team Lead</div>
-        <div class="entry-org">Center for Evaluating the Research Pipeline (CERP), Computing Research Association</div>
+        <div class="entry-org"><a href="https://cra.org/cerp" target="_blank" style="color:var(--teal); text-decoration:none; border-bottom: 1px dashed var(--teal);">Center for Evaluating the Research Pipeline (CERP), Computing Research Association</a></div>
         <div class="entry-meta">August 2024 – Present</div>
         <div class="entry-desc">Single-handedly managing the flagship national Taulbee Survey — the computing field's primary source of enrollment and workforce data since 1974 — across 150+ departments. Also served as CRA-E Evaluator (August 2024–March 2025).</div>
       </div>
@@ -902,7 +924,7 @@
 </div>
 
 <footer>
-  <p>Jasmine Batten, Ph.D. &nbsp;·&nbsp; Computing Education Researcher &nbsp;·&nbsp; <span>jskyebatten@gmail.com</span></p>
+  <p>Jasmine Batten, Ph.D. &nbsp;·&nbsp; Computing Education Researcher &nbsp;·&nbsp; <span>Coral Gables, FL</span></p>
   <p style="margin-top:0.4rem; opacity:0.5;">Last updated 2025</p>
 </footer>
 
