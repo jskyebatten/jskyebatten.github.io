@@ -3,19 +3,163 @@ layout: default
 title: Jasmine Batten, Ph. D. | Computing Education Researcher
 ---
 
+<style>
+    /* ─── HOMEPAGE OVERRIDES ─── */
+    .home-wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 3rem 2rem 5rem;
+    }
+
+    .home-section {
+        margin-bottom: 3.5rem;
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeUp 0.5s ease forwards;
+    }
+
+    .home-section:nth-child(1) {
+        animation-delay: 0.05s;
+    }
+    .home-section:nth-child(2) {
+        animation-delay: 0.12s;
+    }
+    .home-section:nth-child(3) {
+        animation-delay: 0.19s;
+    }
+    .home-section:nth-child(4) {
+        animation-delay: 0.26s;
+    }
+
+    .home-section-label {
+        font-family: "DM Mono", monospace;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--coral);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .home-section-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--coral);
+        opacity: 0.25;
+    }
+
+    .home-section p {
+        font-size: 0.97rem;
+        line-height: 1.9;
+        color: var(--text);
+        margin-bottom: 1.1rem;
+    }
+
+    .home-section p:last-child {
+        margin-bottom: 0;
+    }
+
+    .driving-question {
+        font-size: 1.05rem;
+        font-style: italic;
+        border-left: 3px solid var(--orange);
+        padding: 0.6rem 1rem;
+        margin: 1.4rem 0;
+        color: var(--navy);
+        line-height: 1.7;
+    }
+
+    /* Currently cards */
+    .currently-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .currently-card {
+        background: var(--white);
+        border-left: 4px solid var(--teal);
+        border-radius: 0 4px 4px 0;
+        padding: 1rem 1.1rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        transition:
+            border-color 0.2s,
+            box-shadow 0.2s;
+    }
+
+    .currently-card:hover {
+        border-color: var(--orange);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .currently-card-label {
+        font-family: "DM Mono", monospace;
+        font-size: 0.63rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 0.35rem;
+    }
+
+    .currently-card p {
+        font-size: 0.87rem;
+        line-height: 1.55;
+        color: var(--text);
+        margin: 0;
+    }
+
+    .home-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 2px dashed rgba(42, 127, 127, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .home-wrap {
+            padding: 2rem 1.5rem 4rem;
+        }
+        .currently-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
 <!-- HERO -->
 <header class="hero">
     <div class="hero-text">
         <p class="hero-subtitle">// Computing Education Researcher</p>
-        <h1>Jasmine <span class="coral">Batten</span>, <span class="teal" style="white-space:nowrap;">Ph. D.</span></h1>
+        <h1>
+            Jasmine <span class="coral">Batten</span>,
+            <span class="teal" style="white-space: nowrap">Ph. D.</span>
+        </h1>
         <p class="hero-tagline">
-            Investigating how educational contexts shape student pathways in computing — with a focus on
-            broadening participation and evidence-based pedagogical practices.
+            Investigating how educational contexts shape student pathways in
+            computing — with a focus on broadening participation and
+            evidence-based pedagogical practices.
         </p>
         <div class="hero-contact">
             <a class="contact-chip">Coral Gables, FL</a>
-            <a class="contact-chip" href="https://scholar.google.com/citations?user=-mKMcRMAAAAJ&hl=en" target="_blank">Google Scholar</a>
-            <a class="contact-chip" href="https://www.linkedin.com/in/jasmine-batten-ph-d-140b28185/" target="_blank">LinkedIn</a>
+            <a
+                class="contact-chip"
+                href="https://scholar.google.com/citations?user=-mKMcRMAAAAJ&hl=en"
+                target="_blank"
+                >Google Scholar</a
+            >
+            <a
+                class="contact-chip"
+                href="https://www.linkedin.com/in/jasmine-batten-ph-d-140b28185/"
+                target="_blank"
+                >LinkedIn</a
+            >
         </div>
     </div>
     <div class="hero-photo-wrap">
@@ -29,90 +173,143 @@ title: Jasmine Batten, Ph. D. | Computing Education Researcher
 
 <div class="section-divider"></div>
 
-<div class="main-layout">
-    <aside class="sidebar">
-        <div class="sidebar-section">
-            <div class="sidebar-label">Education</div>
-            <p style="font-size:0.82rem; font-weight:700; color:var(--navy);">Ph. D., Computer Science</p>
-            <p style="font-size:0.78rem; color:var(--teal); font-style:italic;">Florida International University</p>
-            <p style="font-size:0.72rem; color:var(--muted); font-family:'DM Mono',monospace;">July 2024</p>
-            <p style="font-size:0.75rem; color:var(--muted); margin-top:0.3rem;">Specialized in CS Education<br>NSF Graduate Research Fellow</p>
+<div class="home-wrap">
+    <!-- ABOUT -->
+    <div class="home-section">
+        <div class="home-section-label">About Me</div>
+        <p>
+            When I walked into my first university CS course, I was expecting
+            the collaborative classroom that had made me fall in love with
+            computing in high school–peer-led, hands-on, and yapping +
+            brainstorming with my fellow peers. Instead I encountered quiet
+            classrooms echoing with the booming voices of professors, mired in
+            an unspoken culture of competition. I looked around and counted four
+            other women. I almost switched to nursing.
+        </p>
+        <p>
+            I didn't leave — but I never stopped thinking about the students who
+            did.
+        </p>
+        <p>
+            I ultimately stayed in CS because I stumbled across a community of
+            researchers who were asking the same questions I couldn't stop
+            asking (hi fellow alums of the
+            <a
+                href="https://www.moniqueross.com/"
+                target="_blank"
+                style="
+                    color: var(--teal);
+                    text-decoration: none;
+                    border-bottom: 1px dashed var(--teal);
+                "
+                >LEARN-CS Lab</a
+            >
+            + Dr. Ross!). With this newfound feeling of belonging, I realized I
+            would not be able to do it alone–I would only be able to help change
+            the culture in collaboration with a community of like-minded
+            researchers. Here I am almost 10 years later continuing to study the
+            dynamic nature of computing education. And boy is it ever-changing.
+        </p>
+    </div>
 
-            <p style="font-size:0.82rem; font-weight:700; color:var(--navy); margin-top:1rem;">B.S., Computer Science (Honors)</p>
-            <p style="font-size:0.78rem; color:var(--teal); font-style:italic;">Florida International University</p>
-            <p style="font-size:0.72rem; color:var(--muted); font-family:'DM Mono',monospace;">July 2019</p>
+    <!-- THE WORK -->
+    <div class="home-section">
+        <div class="home-section-label">My Work</div>
+        <p>
+            I study both the visible and invisible forces that push minoritized
+            students out of computing–the policies and cultures that create
+            barriers, often disguised as rigor. I'm particularly interested in
+            the dynamics that get overlooked as just structural features of
+            higher education: the implicit messages embedded in how professors
+            teach, the classroom cultures that signal who belongs and who
+            doesn't.
+        </p>
+
+        <p><b>One question has driven all of my work:</b></p>
+        <div class="driving-question">
+            <em
+                >How do we improve computing higher education so that it works
+                for everyone?</em
+            >
         </div>
+        <p>
+            I've learned this is a really complicated question that requires
+            multiple lenses, methodologies, and contexts, and the background
+            knowledge from several different fields of study like psychology,
+            social science, and education. As a mixed-methods researcher, I move
+            fluidly between micro and macro scales, from semester-long
+            ethnographic observations inside programming classrooms to
+            national-scale data analysis, to answer the broader question of how
+            educational environments shape who stays and who leaves computing
+            degree programs.
+        </p>
+        <p>
+            As AI reshapes what it means to learn and belong in computing, that
+            question feels more urgent than ever. I'm not yet sure what the
+            answers look like. But I'm convinced that the researchers who
+            understand the human side of computing education are exactly who
+            needs to be asking them.
+        </p>
+    </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-label">Research Themes</div>
-            <div>
-                <span class="skill-tag">Broadening Participation</span>
-                <span class="skill-tag">Mindset Theory</span>
-                <span class="skill-tag">Pedagogical Practices</span>
-                <span class="skill-tag">Student Persistence</span>
-                <span class="skill-tag">Student Engagement</span>
-                <span class="skill-tag">Learning Environments</span>
-                <span class="skill-tag">Higher Education</span>
-                <span class="skill-tag">Computing Education</span>
-                <span class="skill-tag">Mixed Methods</span>
-                <span class="skill-tag">Ethnography</span>
+    <!-- CURRENTLY -->
+    <div class="home-section">
+        <div class="home-section-label">Currently</div>
+        <div class="currently-grid">
+            <div class="currently-card">
+                <div class="currently-card-label">Role</div>
+                <p>
+                    Research Associate & Taulbee Survey Team Lead at
+                    <a
+                        href="https://cra.org/cerp"
+                        target="_blank"
+                        style="
+                            color: var(--teal);
+                            text-decoration: none;
+                            border-bottom: 1px dashed var(--teal);
+                        "
+                        >CRA-CERP</a
+                    >, analyzing enrollment patterns across 150+ computing
+                    departments in the US and Canada.
+                </p>
             </div>
         </div>
+    </div>
 
-        <div class="sidebar-section">
-            <div class="sidebar-label">Links</div>
-            <ul>
-                <li><a href="/cv">Full CV →</a></li>
-                <li><a href="/blog">Blog →</a></li>
-                <li><a href="https://scholar.google.com/citations?user=-mKMcRMAAAAJ&hl=en" target="_blank">Google Scholar ↗</a></li>
-                <li><a href="https://cra.org/cerp" target="_blank">CRA-CERP ↗</a></li>
-            </ul>
+    {% if site.posts.size > 0 %}
+    <!-- RECENT WRITING -->
+    <div class="home-section">
+        <div class="home-section-label">Recent Writing</div>
+        {% for post in site.posts limit:3 %}
+        <div class="entry">
+            <div class="entry-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
+            <div class="entry-title">
+                <a
+                    href="{{ post.url }}"
+                    style="
+                        color: var(--navy);
+                        text-decoration: none;
+                        border-bottom: 1px dashed var(--teal);
+                    "
+                    >{{ post.title }}</a
+                >
+            </div>
+            <div class="entry-desc">
+                {{ post.excerpt | strip_html | truncatewords: 25 }}
+            </div>
         </div>
-    </aside>
-
-    <main class="content">
-
-        <section class="cv-section" id="research">
-            <h2 class="section-title"><span class="patch patch-teal"></span>Research Vision</h2>
-            <p style="font-size:0.92rem; margin-bottom:1.5rem; line-height:1.8; color:var(--text);">
-                My research investigates how educational contexts — including learning technologies, pedagogical
-                practices, and institutional policies — shape student engagement and persistence in computing
-                education. I am newly interested in the emerging questions of how AI integration in higher education
-                affects student learning outcomes, with an emphasis on practices that support all students' success.
-            </p>
-            <div class="threads-grid">
-                <div class="thread-card tc-1">
-                    <h4>Thread 01 — Adoption</h4>
-                    <p>Investigating how computing faculty and students adopt and utilize AI tools across diverse institutional contexts.</p>
-                </div>
-                <div class="thread-card tc-2">
-                    <h4>Thread 02 — Impacts</h4>
-                    <p>Examining how AI affects student engagement, learning outcomes, and persistence across different student populations.</p>
-                </div>
-                <div class="thread-card tc-3">
-                    <h4>Thread 03 — Resources</h4>
-                    <p>Translating findings into evidence-based frameworks and guidelines for computing educators.</p>
-                </div>
-            </div>
-            <p style="font-size:0.82rem; color:var(--muted); font-style:italic; border-left:3px solid var(--orange); padding-left:0.8rem;">
-                Dissertation: <em>The Role of Mindset Messages in Broadening Participation in Computing: An
-                Ethnographic Study on Student Engagement</em> — Advisor: Dr. Monique Ross
-            </p>
-        </section>
-
-        {% if site.posts.size > 0 %}
-        <section class="cv-section" id="recent-writing">
-            <h2 class="section-title"><span class="patch patch-orange"></span>Recent Writing</h2>
-            {% for post in site.posts limit:3 %}
-            <div class="entry">
-                <div class="entry-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
-                <div class="entry-title"><a href="{{ post.url }}" style="color:var(--navy); text-decoration:none; border-bottom:1px dashed var(--teal);">{{ post.title }}</a></div>
-                <div class="entry-desc">{{ post.excerpt | strip_html | truncatewords: 25 }}</div>
-            </div>
-            {% endfor %}
-            <a href="/blog" style="font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--teal); text-decoration:none; letter-spacing:0.05em;">View all posts →</a>
-        </section>
-        {% endif %}
-
-    </main>
+        {% endfor %}
+        <a
+            href="/blog"
+            style="
+                font-family: &quot;DM Mono&quot;, monospace;
+                font-size: 0.78rem;
+                color: var(--teal);
+                text-decoration: none;
+                letter-spacing: 0.05em;
+            "
+            >View all posts →</a
+        >
+    </div>
+    {% endif %}
 </div>
