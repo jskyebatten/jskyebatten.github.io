@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+<div class="section-divider"></div>
+
+<div style="position:relative; z-index:1; max-width:780px; margin:0 auto; padding:3rem 2rem 5rem;">
+
+    <div style="margin-bottom:2rem;">
+        <a href="/blog" style="font-family:'DM Mono',monospace; font-size:0.75rem; color:var(--muted); text-decoration:none; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.2s;"
+           onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--muted)'">
+            ← Back to Blog
+        </a>
+    </div>
+
+    <article>
+        <header style="margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:2px dashed rgba(42,127,127,0.25);">
+            <p style="font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); letter-spacing:0.08em; margin-bottom:0.8rem; text-transform:uppercase;">
+                {{ page.date | date: "%B %-d, %Y" }}
+                {% if page.category %}
+                &nbsp;·&nbsp; <span style="color:var(--teal);">{{ page.category }}</span>
+                {% endif %}
+            </p>
+            <h1 style="font-family:'DM Serif Display',serif; font-size:clamp(1.8rem,4vw,2.8rem); color:var(--navy); line-height:1.2; margin-bottom:1rem;">
+                {{ page.title }}
+            </h1>
+            {% if page.excerpt %}
+            <p style="font-size:1.05rem; color:var(--muted); font-style:italic; border-left:3px solid var(--orange); padding-left:1rem; line-height:1.7;">
+                {{ page.excerpt }}
+            </p>
+            {% endif %}
+        </header>
+
+        <div class="post-content">
+            {{ content }}
+        </div>
+
+        <footer style="margin-top:3rem; padding-top:1.5rem; border-top:2px dashed rgba(42,127,127,0.25);">
+            <p style="font-family:'DM Mono',monospace; font-size:0.75rem; color:var(--muted); letter-spacing:0.05em;">
+                Written by <span style="color:var(--teal);">Jasmine Batten, Ph. D.</span>
+            </p>
+        </footer>
+    </article>
+</div>
+
+<style>
+    .post-content { font-size: 1rem; line-height: 1.85; color: var(--text); }
+    .post-content p { margin-bottom: 1.4rem; }
+    .post-content h2 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 1.5rem;
+        color: var(--navy);
+        margin: 2.5rem 0 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+    .post-content h2::before {
+        content: '';
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: var(--teal);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+    .post-content h3 {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--coral);
+        margin: 2rem 0 0.8rem;
+    }
+    .post-content a { color: var(--teal); text-decoration: underline; text-decoration-style: dotted; }
+    .post-content a:hover { color: var(--teal-dark); }
+    .post-content blockquote {
+        border-left: 3px solid var(--orange);
+        padding: 0.5rem 1rem;
+        margin: 1.5rem 0;
+        color: var(--muted);
+        font-style: italic;
+        font-size: 1.05rem;
+    }
+    .post-content ul, .post-content ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1.4rem;
+    }
+    .post-content li { margin-bottom: 0.4rem; }
+    .post-content code {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.85em;
+        background: var(--cream);
+        padding: 0.1rem 0.4rem;
+        border-radius: 2px;
+        color: var(--teal-dark);
+    }
+    .post-content strong { color: var(--navy); }
+    .post-content em { color: var(--muted); }
+</style>

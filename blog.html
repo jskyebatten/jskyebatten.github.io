@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog | Jasmine Batten, Ph. D.
+---
+
+<div class="section-divider"></div>
+
+<div class="page-header">
+    <h1><span class="patch patch-teal" style="width:24px;height:24px;border-radius:2px;background:var(--teal);display:inline-block;flex-shrink:0;"></span> Blog</h1>
+    <p>Thinking out loud about computing education, AI in the classroom, and what it means to belong in CS.</p>
+</div>
+
+<div class="blog-grid">
+    {% if site.posts.size > 0 %}
+        {% for post in site.posts %}
+        <a class="blog-card" href="{{ post.url }}">
+            <div class="blog-card-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+            <div class="blog-card-title">{{ post.title }}</div>
+            <div class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</div>
+            {% if post.category %}
+            <span class="blog-card-tag">{{ post.category }}</span>
+            {% endif %}
+        </a>
+        {% endfor %}
+    {% else %}
+        <div class="blog-empty">
+            <p style="font-family:'DM Mono',monospace; font-size:0.85rem;">// First post coming soon</p>
+        </div>
+    {% endif %}
+</div>
