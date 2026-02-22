@@ -146,8 +146,8 @@
     /* ─── HEADSHOT + QUILT FRAME ─── */
     .hero-photo-wrap {
       position: relative;
-      width: 254px;   /* photo 220px + offset 14px + corner bleed 20px */
-      height: 254px;
+      width: 304px;   /* photo 270px + offset 14px + corner bleed 20px */
+      height: 304px;
       flex-shrink: 0;
     }
 
@@ -157,8 +157,8 @@
       position: absolute;
       top: 14px;
       left: 14px;
-      width: 220px;
-      height: 220px;
+      width: 270px;
+      height: 270px;
       background: var(--teal);
       border-radius: 4px;
       z-index: 0;
@@ -170,8 +170,8 @@
       top: 0;
       left: 0;
       z-index: 2;
-      width: 220px;
-      height: 220px;
+      width: 270px;
+      height: 270px;
       object-fit: cover;
       object-position: center top;
       border-radius: 4px;
@@ -188,9 +188,9 @@
       z-index: 3;
     }
     .corner-tl { top: -6px;  left: -6px;  background: var(--orange); }
-    .corner-tr { top: -6px;  left: 208px; background: var(--coral);  }
-    .corner-bl { top: 208px; left: -6px;  background: var(--coral);  }
-    .corner-br { top: 208px; left: 208px; background: var(--orange); }
+    .corner-tr { top: -6px;  left: 258px; background: var(--coral);  }
+    .corner-bl { top: 258px; left: -6px;  background: var(--coral);  }
+    .corner-br { top: 258px; left: 258px; background: var(--orange); }
 
     /* ─── DIVIDER ─── */
     .section-divider {
@@ -474,22 +474,22 @@
       /* Photo shrinks but stays visible, centered above text */
       .hero-photo-wrap {
         order: 1;
-        width: 194px;
-        height: 194px;
+        width: 234px;
+        height: 234px;
       }
       .hero-photo-wrap::before {
         top: 11px;
         left: 11px;
-        width: 170px;
-        height: 170px;
+        width: 210px;
+        height: 210px;
       }
       .hero-photo {
-        width: 170px;
-        height: 170px;
+        width: 210px;
+        height: 210px;
       }
-      .corner-tr { left: 158px; }
-      .corner-bl { top: 158px; }
-      .corner-br { top: 158px; left: 158px; }
+      .corner-tr { left: 198px; }
+      .corner-bl { top: 198px; }
+      .corner-br { top: 198px; left: 198px; }
 
       .main-layout { grid-template-columns: 1fr; padding: 0 1.2rem 3rem; }
       .sidebar { position: static; border-right: none; border-bottom: 2px dashed rgba(42,127,127,0.25); padding: 1.5rem 0; }
@@ -526,6 +526,7 @@
     </p>
     <div class="hero-contact">
       <a class="contact-chip" href="#">Coral Gables, FL</a>
+      <a class="contact-chip" href="https://scholar.google.com/citations?user=-mKMcRMAAAAJ&hl=en" target="_blank">Google Scholar</a>
     </div>
   </div>
   <div class="hero-photo-wrap">
@@ -544,6 +545,14 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Links</div>
+      <ul>
+        <li><a href="https://scholar.google.com/citations?user=-mKMcRMAAAAJ&hl=en" target="_blank">Google Scholar ↗</a></li>
+        <li><a href="https://cra.org/cerp" target="_blank">CRA-CERP ↗</a></li>
+      </ul>
+    </div>
+
     <div class="sidebar-section">
       <div class="sidebar-label">Navigate</div>
       <ul>
@@ -624,7 +633,7 @@
         <div class="entry-title">Research Associate — Taulbee Survey Team Lead</div>
         <div class="entry-org"><a href="https://cra.org/cerp" target="_blank" style="color:var(--teal); text-decoration:none; border-bottom: 1px dashed var(--teal);">Center for Evaluating the Research Pipeline (CERP), Computing Research Association</a></div>
         <div class="entry-meta">August 2024 – Present</div>
-        <div class="entry-desc">Single-handedly managing the flagship national Taulbee Survey — the computing field's primary source of enrollment and workforce data since 1974 — across 150+ departments. Also served as CRA-E Evaluator (August 2024–March 2025).</div>
+        <div class="entry-desc">Taulbee Team Lead for the national Taulbee Survey — the computing field's primary source of enrollment and workforce data since 1974 — across 150+ departments. In my role, I also previously served as CRA-E Evaluator (August 2024–March 2025).</div>
       </div>
 
       <div class="entry">
@@ -635,7 +644,7 @@
 
       <div class="entry">
         <div class="entry-title">Graduate Research Assistant</div>
-        <div class="entry-org">LEARN-CS Lab, Florida International University — Dr. Monique Ross</div>
+        <div class="entry-org"><a href="https://www.moniqueross.com/" target="_blank" style="color:var(--teal); text-decoration:none; border-bottom: 1px dashed var(--teal);">LEARN-CS Lab, Florida International University — Dr. Monique Ross</a></div>
         <div class="entry-meta">August 2019 – July 2021</div>
       </div>
 
