@@ -11,12 +11,13 @@
         rel="stylesheet" />
     <style>
         :root {
-            --teal: #2A7F7F;
-            --teal-dark: #1e5f5f;
-            --orange: #F5A623;
-            --coral: #E05A3A;
-            --cream: #F5ECD7;
-            --navy: #1A1A2E;
+            --teal: #579799;
+            --teal-dark: #526F80;
+            --orange: #F4BB61;
+            --coral: #E27053;
+            --red: #A83825;
+            --cream: #F4E0C4;
+            --navy: #1B3D54;
             --white: #FFFFFF;
             --light-bg: #faf7f2;
             --text: #2c2c2c;
@@ -50,7 +51,7 @@
             position: fixed;
             inset: 0;
             background-image:
-                repeating-linear-gradient(45deg, rgba(42, 127, 127, 0.03) 0, rgba(42, 127, 127, 0.03) 1px, transparent 0, transparent 50%),
+                repeating-linear-gradient(45deg, rgba(87, 151, 153, 0.03) 0, rgba(87, 151, 153, 0.03) 1px, transparent 0, transparent 50%),
                 repeating-linear-gradient(-45deg, rgba(245, 166, 35, 0.03) 0, rgba(245, 166, 35, 0.03) 1px, transparent 0, transparent 50%);
             background-size: 40px 40px;
             pointer-events: none;
@@ -331,7 +332,7 @@
             position: sticky;
             top: 72px;
             padding: 2.5rem 2rem 2rem 0;
-            border-right: 2px dashed rgba(42, 127, 127, 0.25);
+            border-right: 2px dashed rgba(87, 151, 153, 0.25);
         }
 
         .sidebar-section {
@@ -385,7 +386,7 @@
             font-size: 0.7rem;
             font-family: 'DM Mono', monospace;
             background: var(--cream);
-            border: 1px solid rgba(42, 127, 127, 0.3);
+            border: 1px solid rgba(87, 151, 153, 0.3);
             color: var(--teal-dark);
             padding: 0.2rem 0.5rem;
             border-radius: 2px;
@@ -488,28 +489,6 @@
 
         .pub-item:hover { box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1); border-color: var(--orange); }
         .pub-item a { color: var(--teal); word-break: normal; overflow-wrap: break-word; }
-        .pub-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.2rem;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.68rem;
-            color: var(--teal);
-            text-decoration: none;
-            border: 1px solid rgba(42,127,127,0.35);
-            background: var(--cream);
-            padding: 0.15rem 0.45rem;
-            border-radius: 2px;
-            margin-left: 0.4rem;
-            vertical-align: middle;
-            letter-spacing: 0.04em;
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-        .pub-link:hover {
-            background: var(--teal);
-            color: var(--white);
-            border-color: var(--teal);
-        }
 
         .pub-tag {
             display: inline-block;
@@ -602,7 +581,7 @@
             font-family: 'DM Mono', monospace;
             background: var(--cream);
             color: var(--teal-dark);
-            border: 1px solid rgba(42, 127, 127, 0.3);
+            border: 1px solid rgba(87, 151, 153, 0.3);
             padding: 0.1rem 0.45rem;
             border-radius: 2px;
             margin-top: 0.8rem;
@@ -630,7 +609,7 @@
             .corner-bl { top: 198px; }
             .corner-br { top: 198px; left: 198px; }
             .main-layout { grid-template-columns: 1fr; padding: 0 1.2rem 3rem; }
-            .sidebar { position: static; border-right: none; border-bottom: 2px dashed rgba(42, 127, 127, 0.25); padding: 1.5rem 0; }
+            .sidebar { position: static; border-right: none; border-bottom: 2px dashed rgba(87, 151, 153, 0.25); padding: 1.5rem 0; }
             .content { padding: 2rem 0 0; }
             .threads-grid { grid-template-columns: 1fr; }
             nav { padding: 0 1.2rem; }
